@@ -5,40 +5,65 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <PageLayout title="Bionary Club" className="flex flex-col">
-      <div className="flex flex-col items-center flex-1 gap-5">
-        <div className="grid place-content-center text-center gap-2">
+      <div className="flex flex-col items-center justify-center flex-1 gap-5">
+        <div className="grid place-content-center text-center gap-5">
           <ReactTypingEffect
             text={"Welcome to Bionary club"}
             cursorRenderer={(cursor) => (
-              <h2 className="hidden md:block">{cursor}</h2>
+              <h2 className="hidden md:block text-purple-600">{cursor}</h2>
             )}
-            displayTextRenderer={(text, i) => <h2>{text.toUpperCase()}</h2>}
+            displayTextRenderer={(text, x) => (
+              <h2 key={x} className="tracking-widest">
+                {text
+                  .toUpperCase()
+                  .split("")
+                  .map((e, i) => (
+                    <span
+                      key={e + i}
+                      className={
+                        i % 2 === 0 ? "text-purple-300" : "text-purple-600"
+                      }
+                    >
+                      {e}
+                    </span>
+                  ))}
+              </h2>
+            )}
             speed={100}
             eraseSpeed={100}
             eraseDelay={99999999999999}
             typingDelay={100}
+            className="font-bold tracking-widest"
           />
 
-          <motion.h5
+          <motion.h4
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 3 }}
+            transition={{ duration: 0.8, delay: 3 }}
+            className="tracking-widest"
           >
-            REVELATION OF A TECH AMALGATION
-          </motion.h5>
+            {"REVELATION OF A TECH AMALGATION".split("").map((e, i) => (
+              <span
+                key={e + i}
+                className={i % 2 === 0 ? "text-[26px]" : "text-[32px]"}
+              >
+                {e}
+              </span>
+            ))}
+          </motion.h4>
         </div>
 
-        <motion.p
+        <motion.h6
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 3 }}
-          className="text-center w-[600px] max-w-full"
+          transition={{ duration: 0.8, delay: 3 }}
+          className="text-center w-[650px] max-w-full"
         >
           Bionary club is a TECH club focused on the field of industry 4.0 and
           Human robot interaction. As a club we will host hackathons, workshops
           in these field to make everyone aware of the oppurtunities in the
-          field and excel in them
-        </motion.p>
+          field and excel in them.
+        </motion.h6>
       </div>
     </PageLayout>
   );
