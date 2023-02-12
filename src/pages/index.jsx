@@ -10,10 +10,10 @@ export default function Home() {
           <ReactTypingEffect
             text={"Welcome to Bionary club"}
             cursorRenderer={(cursor) => (
-              <h2 className="hidden md:block text-purple-600">{cursor}</h2>
+              <h1 className="hidden md:block text-purple-600">{cursor}</h1>
             )}
             displayTextRenderer={(text, x) => (
-              <h2 key={x} className="tracking-widest">
+              <h1 key={x} className="tracking-widest">
                 {text
                   .toUpperCase()
                   .split("")
@@ -27,7 +27,7 @@ export default function Home() {
                       {e}
                     </span>
                   ))}
-              </h2>
+              </h1>
             )}
             speed={100}
             eraseSpeed={100}

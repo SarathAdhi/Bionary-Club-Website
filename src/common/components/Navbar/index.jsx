@@ -34,7 +34,7 @@ export const Navbar = () => {
   return (
     <>
       <header className="p-4 w-full sticky top-0 backdrop-blur-sm">
-        <div className="p-4 w-full border-[1px] hidden sm:flex justify-center items-center rounded-lg">
+        <div className="p-4 w-full hidden sm:flex justify-center items-center rounded-lg">
           <NavLinks className="flex group duration-200  gap-10 text-lg" />
         </div>
 
