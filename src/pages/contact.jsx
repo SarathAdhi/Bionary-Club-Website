@@ -1,4 +1,4 @@
-import Input from "antd/es/input/Input";
+import Input from "antd/lib/input";
 import React from "react";
 import { PageLayout } from "../common/layouts/PageLayout";
 
