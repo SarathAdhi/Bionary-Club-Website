@@ -1,6 +1,7 @@
 import { PageLayout } from "../common/layouts/PageLayout";
 import ReactTypingEffect from "react-typing-effect";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 
 export default function Home() {
   return (
@@ -20,9 +21,10 @@ export default function Home() {
                   .map((e, i) => (
                     <span
                       key={e + i}
-                      className={
+                      className={clsx(
+                        "font-bold",
                         i % 2 === 0 ? "text-purple-300" : "text-purple-600"
-                      }
+                      )}
                     >
                       {e}
                     </span>
@@ -40,7 +42,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 3 }}
-            className="tracking-widest"
+            className="tracking-widest font-medium"
           >
             {"REVELATION OF A TECH AMALGATION".split("").map((e, i) => (
               <span
@@ -57,7 +59,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 3 }}
-          className="text-center w-[650px] max-w-full"
+          className="text-center w-[650px] max-w-full font-medium"
         >
           Bionary club is a TECH club focused on the field of industry 4.0 and
           Human robot interaction. As a club we will host hackathons, workshops
