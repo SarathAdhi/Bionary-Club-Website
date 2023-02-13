@@ -19,6 +19,7 @@ export const Navbar = () => {
           <Link
             key={name}
             href={href}
+            onClick={() => setIsDrawerOpen(false)}
             className={clsx(
               "transition group-hover:opacity-50 group-hover:border-b-transparent duration-200 hover:!opacity-100 hover:text-purple-200 hover:!border-b-purple-500 border-b-[3px] border-b-transparent",
               pathname === href && "border-b-purple-500"
@@ -34,7 +35,7 @@ export const Navbar = () => {
   return (
     <>
       <header className="p-4 w-full sticky top-0 backdrop-blur-sm">
-        <div className="p-4 w-full hidden sm:flex justify-center items-center rounded-lg">
+        <div className="w-full hidden sm:flex justify-center items-center rounded-lg">
           <NavLinks className="flex group duration-200  gap-10 text-lg" />
         </div>
 
